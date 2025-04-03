@@ -1,0 +1,37 @@
+/* h1{ (type selector)
+    color: green;
+}
+
+#first{    (id selector)
+    color: purple;
+}
+
+.second{ (class selector)
+    color: blue;
+} */
+
+/* 
+*{ (universal selector)
+    text-align: center;
+} */
+
+h2.text-red{ 
+    color: red;
+}
+
+
+/* h1 , h2 , p{
+    color: purple;
+    text-align: center;
+
+} */
+
+/* h2{
+    color: red;
+    text-align: center;
+}
+
+p{
+    color: red;
+    text-align: center;
+} */
