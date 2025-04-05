@@ -1,0 +1,27 @@
+/* div p{
+    color: red;
+} */
+
+/* div > p {
+  color: hsl(55, 100%, 10%);
+  background-color: blue;
+  opacity: 0.5;
+} */
+
+/* body {
+  background-image: url("https://www.skyweaver.net/images/media/wallpapers/wallpaper1.jpg");
+  background-attachment: fixed;
+  background-image: url('background.jpg');
+} */
+
+/* heading (name ) // should be blue font size should be 20px */
+
+/* paragraph about me // should be aqua color size should be 16px */
+
+
+.parallex{
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+    /* border: solid 5px red; */
+}
