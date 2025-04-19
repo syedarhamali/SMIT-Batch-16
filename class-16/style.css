@@ -1,0 +1,80 @@
+/* .icon , .main-input{
+    display: inline-block;
+} */
+
+/* .input-box{
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.main-input{
+    max-height: max-content;
+}
+.main-input input{
+    border: none;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    cursor: not-allowed;
+} */
+
+
+/* .boxes{
+    background-color: aqua;
+    padding: 10px;
+
+}
+
+.box{
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: red;
+}
+
+
+.box1{
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.box2{
+    background-color: blue;
+    z-index: 0;
+    position: relative;
+
+} */
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: sticky;
+    top: 0px;
+}
+
+nav{
+    display: flex;
+    gap: 10px;
+}
