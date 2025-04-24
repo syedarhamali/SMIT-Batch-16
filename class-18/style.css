@@ -1,0 +1,16 @@
+.flex-container{
+    background-color: aquamarine;
+    display: flex;
+    min-height:500px;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flex-container .box{
+    border: 1px solid black;
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+}
