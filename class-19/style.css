@@ -30,7 +30,7 @@
 } */
 
 body {
-  background-color: #002062;
+  background-color: yellow
 }
 
 .navbar {
@@ -59,7 +59,36 @@ nav ul {
     position: absolute;
 }
 
-@media screen and (max-width: 600px) {
+/* for tablet  */
+@media screen and (max-width: 768px) {
+  h1 {
+    color: white;
+  }
+  body {
+    background-color: blue;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .menu-bar {
+    display: block;
+  }
+
+  .menu-bar:hover + .dropdown,
+  .header-bar:hover + .dropdown {
+    display: block;
+  }
+}
+
+/* for mobiles  */
+@media screen and (max-width: 375px) {
   h1 {
     color: white;
   }
