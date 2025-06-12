@@ -13,13 +13,46 @@ function start() {
     var numTwo = +prompt("Enter your second Number")
     var operator = prompt("Enter your Operator")
 
-    console.log(numOne , numTwo)
 
     if (isNaN(numOne)) {
         alert("provided number is not a number")
-    } else{
-        if(operator === "+"){
-            console.log(numOne + numTwo)
+    } else {
+        if (operator === "+") {
+            sumOfTwoNumbers(numOne, numTwo)
+            // console.log(numOne + numTwo)
+        } else if (operator === "-") {
+            SubOfTwoNumbers(numOne, numTwo)
+        }
+        else if (operator === "*") {
+            MulOfTwoNumbers(numOne, numTwo)
+        }
+        else if (operator === "/") {
+            DivOfTwoNumbers(numOne, numTwo)
         }
     }
 }
+
+
+var result = sumOfTwoNumbers(20, 10)
+console.log(result)
+
+
+function sumOfTwoNumbers(numberOne, numberTwo) { // arguments
+    return numberOne + numberTwo
+   
+}
+
+function SubOfTwoNumbers(numberOne, numberTwo) { // arguments
+    console.log(numberOne - numberTwo)
+}
+
+function MulOfTwoNumbers(numberOne, numberTwo) { // arguments
+    console.log(numberOne * numberTwo)
+}
+
+function DivOfTwoNumbers(numberOne, numberTwo) { // arguments
+    console.log(numberOne / numberTwo)
+}
+
+
+
