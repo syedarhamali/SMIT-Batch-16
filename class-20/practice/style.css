@@ -10,7 +10,7 @@
   /* transform: translate(100px , 200px); */
   /* animation-name: hello;
   animation-duration: 4s;
-  animation-iteration-count: infinite; */
+  animation-iteration-count: infinite; */  
   transition-property: width;
   transition-duration: 2s;
 }
