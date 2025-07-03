@@ -45,6 +45,7 @@ const questions = [
     },
 ]
 let currentQuestion = 0
+let score = 0
 
 
 function showQuestions() {
@@ -59,25 +60,40 @@ function showQuestions() {
     questions[currentQuestion].options
 
     for (var i = 0; i < questions[currentQuestion].options.length; i++) {
-        optionsElement.innerHTML += `<div id="option" class="option">${questions[currentQuestion].options[i]}</div>`
+        optionsElement.innerHTML += `<div id="option" onClick="saveAnswer(event)" class="option">${questions[currentQuestion].options[i]}</div>`
     }
 }
 
 showQuestions()
+let scoreElement = document.getElementById("score")
+let userAnswer = null
 
+function saveAnswer(event) {
+    console.log(event.target)
+    event.target.classList.add("active")
+    for
+    event.target.classList.remove("option")
+    // console.log(event.target.classList)
+    userAnswer = event.target.innerHTML
+}
 
 function incrementQuestion() {
     let nextQuestionButton = document.getElementById("nextBtn")
-    if (currentQuestion === questions.length - 2) {
-        nextQuestionButton.disabled = true
+    console.log(userAnswer)
+    if (userAnswer == questions[currentQuestion].correctAnswer) {
+        score = score + 10
     }
     currentQuestion++
+    if (currentQuestion === questions.length - 1) {
+        nextQuestionButton.disabled = true
+    }
+    scoreElement.textContent = score
     showQuestions()
 }
 
-var testing = ["Arham", "Taha", "Hamza", "Affan"]
+// var testing = ["Arham", "Taha", "Hamza", "Affan"]
 
 
-testing.map((arham) => {
-    console.log(arham)
-})
+// testing.map((arham) => {
+//     console.log(arham)
+// })
