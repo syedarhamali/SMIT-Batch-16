@@ -11,46 +11,29 @@
 
 
 
-var person = {
-    name: "Arham",
-    age: 24,
-    nationality: "Pakistan"
+// var person = {
+//     name: "Arham",
+//     age: 24,
+//     nationality: "Pakistan"
+// }
+
+
+let questions = []
+
+async function getData() {
+//     fetch("https://the-trivia-api.com/v2/questions").then(res => res.json()).then((res) => {
+//     questions = res
+//    })
 }
 
-
-const questions = [
-    {
-        id: 1,
-        question: "What is your name",
-        options: ["Arham", "Taha", "Hamza", "Affan"],
-        correctAnswer: "Arham"
-    },
-    {
-        id: 2,
-        question: "What is your age",
-        options: [21, 22, 23, 24],
-        correctAnswer: 21
-    },
-    {
-        id: 3,
-        question: "What is your nationality",
-        options: ["Afghani", "Pakistani", "Bangali", "British"],
-        correctAnswer: "Pakistani"
-    },
-    {
-        id: 4,
-        question: "What is your qualification",
-        options: ["Jahil", "Matric", "Inter", "Graduate"],
-        correctAnswer: "Graduate"
-    },
-]
+getData()
 let currentQuestion = 0
 let score = 0
 
 
 function showQuestions() {
     let questionElement = document.getElementById("question");
-    questionElement.innerHTML = questions[currentQuestion].question
+    questionElement.innerHTML = questions[currentQuestion].question.text
 
     let optionsElement = document.getElementById("options")
 
@@ -64,7 +47,6 @@ function showQuestions() {
     }
 }
 
-showQuestions()
 let scoreElement = document.getElementById("score")
 let userAnswer = null
 let nextQuestionButton = document.getElementById("nextBtn")
@@ -105,11 +87,11 @@ function incrementQuestion() {
         score = score + 10
     }
     currentQuestion++
-    if (currentQuestion === questions.length - 1) {
-        nextQuestionButton.disabled = true
-        nextQuestionButton.style.display = "none"
-        finishQuizButton.style.display = "block"
-    }
+    // if (currentQuestion === questions.length - 1) {
+    //     nextQuestionButton.disabled = true
+    //     nextQuestionButton.style.display = "none"
+    //     finishQuizButton.style.display = "block"
+    // }
     scoreElement.textContent = score
     showQuestions()
     nextQuestionButton.disabled = true
@@ -138,6 +120,9 @@ function restartQuiz() {
     finishQuizButton.style.display = "none"
 
 }
+
+
+
 
 // var testing = ["Arham", "Taha", "Hamza", "Affan"]
 

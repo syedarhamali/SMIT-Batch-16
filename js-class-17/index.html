@@ -11,6 +11,9 @@
 <body>
     <h1>Quiz Application</h1>
 
+
+    <button onclick="showQuestions()">Start</button>
+
     <div id="quiz-container">
         <p id="question">What is your class</p>
         <div class="options" id="options" style="padding-bottom: 50px;">
@@ -28,7 +31,7 @@
 
     </div>
 
-    <button onclick="incrementQuestion()" id="nextBtn" disabled>Next Question</button>
+    <button onclick="incrementQuestion()" id="nextBtn">Next Question</button>
     <button onclick="finishQuiz()" id="finishQuiz" style="display: none;">Finish Quiz</button>
     <button onclick="restartQuiz()" id="restartQuiz" style="display: none;">Restart</button>
 
