@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Quiz Application</h1>
+
+
+    <button onclick="showQuestions()">Start</button>
+
+    <div id="quiz-container" style="display: none;">
+        <p id="question">What is your class</p>
+        <div class="options" id="options" style="padding-bottom: 50px;">
+            <!-- <div id="option" class="option">HTML</div>
+            <div id="option" class="option">HTML</div>
+            <div id="option" class="option">HTML</div>
+            <div id="option" class="option">HTML</div> -->
+        </div>
+    </div>
+
+
+    <div id="result-container" style="display: none;">
+
+        <p>Your score is <span id="score"></span> / <span>40</span> </p>
+
+    </div>
+
+    <button onclick="incrementQuestion()" id="nextBtn">Next Question</button>
+    <button onclick="finishQuiz()" id="finishQuiz" style="display: none;">Finish Quiz</button>
+    <button onclick="restartQuiz()" id="restartQuiz" style="display: none;">Restart</button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

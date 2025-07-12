@@ -1,0 +1,9 @@
+.options , .option{
+    margin: 10px auto;
+}
+
+.active{
+    background-color: green;
+    color: black;
+    font-size: 20px;
+}
