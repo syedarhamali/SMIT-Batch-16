@@ -27,7 +27,7 @@ let quizContainer = document.getElementById("quiz-container")
 //         correctAnswer: "Graduate"
 //     },
 // ]
-async function getData() {
+function getData() {
     fetch("https://the-trivia-api.com/v2/questions").then(res => res.json()).then((res) => {
         questions = res
     })
@@ -47,9 +47,10 @@ function showQuestions() {
     console.log(questions[currentQuestion].incorrectAnswers, "Incorrect answers")
     console.log(questions[currentQuestion].correctAnswer, "Correct answers")
 
+    // let options = [1,2,4, 3]
     let options = [...questions[currentQuestion].incorrectAnswers, questions[currentQuestion].correctAnswer]
 
-
+    options.sort(() => Math.random() - 0.5)
     let optionsElement = document.getElementById("options")
 
 
@@ -150,12 +151,15 @@ function restartQuiz() {
 let numbers = [1, 100, 3, 4, 5, 2, 500, 600]
 
 
-numbers.sort((nextElement, previousElement) => {
-    return nextElement - previousElement
-    // agr nextElement me se previousElement minus hokr answer positive aya 
-    // previous element phly ajayega
-    // agr nextElement me se previousElement minus hokr answer negative aya 
-    // next element phly ajayega
-    // agr nextElement me se previousElement minus hokr answer 0 aya 
-    // kuch change nh hoga
-})
+// numbers.sort((nextElement, previousElement) => {
+//     return nextElement - previousElement
+//     // agr nextElement me se previousElement minus hokr answer positive aya 
+//     // previous element phly ajayega
+//     // agr nextElement me se previousElement minus hokr answer negative aya 
+//     // next element phly ajayega
+//     // agr nextElement me se previousElement minus hokr answer 0 aya 
+//     // kuch change nh hoga
+// })
+
+numbers.sort(() => Math.random() - 0.5)
+console.log(numbers)
