@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX-Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- header Section  -->
+
+    <header>
+        <div style="width: 1200px; margin: 0px auto;" class="first-div">
+
+            <nav class="navbar navbar-expand-lg header">
+
+                <div class="container-fluid ">
+                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px"
+                        height="30px">
+                        <path
+                            d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z" />
+                    </svg>
+                    <a class="navbar-brand" href="#"><svg height="32" viewBox="0 0 36.289 20.768" alt="Logo"
+                            class="_8113da19 olx-svg">
+                            <path
+                                d="M18.9 20.77V0h4.93v20.77zM0 10.39a8.56 8.56 0 1 1 8.56 8.56A8.56 8.56 0 0 1 0 10.4zm5.97-.01a2.6 2.6 0 1 0 2.6-2.6 2.6 2.6 0 0 0-2.6 2.6zm27 5.2l-1.88-1.87-1.87 1.88H25.9V12.3l1.9-1.9-1.9-1.89V5.18h3.27l1.92 1.92 1.93-1.92h3.27v3.33l-1.9 1.9 1.9 1.9v3.27z">
+                            </path>
+                        </svg></a>
+
+                    <div class="navbar-nav">
+                        <a class="nav-link active motor-a" aria-current="page" href="#">
+                            <div class="svg">
+                                <div class="motor-svg"><svg width="101" height="40" class="motor-logo"
+                                        viewBox="0 0 101 40" fill="none">
+                                        <rect width="40" height="40" rx="20"
+                                            fill="linear-gradient(180deg, rgba(0, 47, 52, .16), rgba(0, 47, 52, .01) 81.77%, rgba(0, 47, 52, .01))">
+                                        </rect>
+                                        <path class="svg-hover"
+                                            d="M31.749 16.384a1.66 1.66 0 0 0-2.082-1.08l-.918.29-1.584-3.346-.5-.168a24.015 24.015 0 0 0-7.168-.998 18.012 18.012 0 0 0-6.537 1.025l-.45.186-1.517 3.503-.643-.204a1.66 1.66 0 1 0-1.002 3.163l.127.04-.1.185a6.093 6.093 0 0 0-.615 2.262c-.014.369 0 1.11.027 1.831l.015 3.989v.039c-.023.363.016.726.117 1.076a1.102 1.102 0 0 0 1.114.74h2.363a1.103 1.103 0 0 0 1.114-.74c.1-.35.14-.714.117-1.078v-.436c2.762.243 4.533.364 6.285.364 1.739 0 3.45-.12 6.092-.357v.43a3.19 3.19 0 0 0 .117 1.076 1.102 1.102 0 0 0 1.114.742h2.363a1.104 1.104 0 0 0 1.114-.741c.1-.35.14-.713.117-1.076l.015-3.96v-.034c.051-.732.104-1.49.092-1.93a5.602 5.602 0 0 0-.636-2.35l-.105-.21.478-.15a1.662 1.662 0 0 0 1.076-2.083Zm-18.375-3.202.02-.007a16.884 16.884 0 0 1 6.098-.938c2.3-.032 4.593.283 6.8.937l.034.011 1.3 2.747a26.47 26.47 0 0 1-6.418.614h-1.07a42.342 42.342 0 0 1-8.027-.45l1.263-2.914Zm-.91 13.92a3.26 3.26 0 0 1-.04.662H9.987a3.253 3.253 0 0 1-.04-.662v-.872c.16.081.332.132.51.15l2.01.183v.5l-.004.04Zm17.198-.038v.04c.01.221-.003.443-.039.662h-2.437a3.255 3.255 0 0 1-.04-.662v-.534l1.883-.175a1.57 1.57 0 0 0 .635-.204l-.002.873Zm.651-9.697-1.767.56.716 1.433c.301.573.475 1.205.508 1.852.01.36-.036 1.05-.08 1.686h-.013v.209c-.027.4-.052.777-.063 1.05-.016.431-.286 1.057-.694 1.095-4.491.421-6.75.633-9.018.633-2.268 0-4.65-.216-9.344-.647-.274-.026-.465-.48-.525-.892-.043-.3-.078-.794-.102-1.304v-.146a25.401 25.401 0 0 1-.022-1.612 4.868 4.868 0 0 1 .484-1.77l.764-1.393-1.467-.465a.506.506 0 0 1 .304-.963l1.638.518.015-.034c2.453.436 4.946.612 7.436.525h2.127a26.81 26.81 0 0 0 6.92-.707l.487-.15 1.393-.44a.513.513 0 0 1 .633.328.507.507 0 0 1-.33.634Z"
+                                            fill="#000000"></path>
+                                        <path class="svg-hover"
+                                            d="M12.544 20.081a1.8 1.8 0 1 0 0 3.601 1.8 1.8 0 0 0 0-3.601Zm0 2.454a.65.65 0 1 1 0-1.302.65.65 0 0 1 0 1.303v-.001Zm14.569-2.454a1.8 1.8 0 1 0 0 3.601 1.8 1.8 0 0 0 0-3.601Zm0 2.454a.649.649 0 1 1 .002-1.3.649.649 0 0 1-.002 1.302v-.002Zm-11.718.281h8.965v1.155h-8.965v-1.155ZM51.968 12.8l3.2 7.632 3.216-7.632h2.912V24h-2.16v-8l-2.912 7.056h-2.096L51.216 16v8h-2.16V12.8h2.912Zm10.791 7.04c0-2.544 1.952-4.416 4.496-4.416 2.56 0 4.512 1.888 4.512 4.416 0 2.528-1.888 4.368-4.512 4.368-2.608 0-4.496-1.84-4.496-4.368Zm2.208 0c0 1.424.976 2.416 2.288 2.416 1.328 0 2.304-.992 2.304-2.416s-.976-2.464-2.304-2.464c-1.328 0-2.288 1.024-2.288 2.464Zm8.277-4.208v-1.76h2.176v1.76h1.568v1.792H75.42v3.232c0 1.248.384 1.504 1.232 1.504.144 0 .224 0 .4-.016v1.888s-.336.08-.944.08c-2 0-2.88-1.12-2.88-3.392v-3.296h-.88v-1.792h.896ZM77.9 19.84c0-2.544 1.952-4.416 4.496-4.416 2.56 0 4.512 1.888 4.512 4.416 0 2.528-1.888 4.368-4.512 4.368-2.608 0-4.496-1.84-4.496-4.368Zm2.208 0c0 1.424.976 2.416 2.288 2.416 1.328 0 2.304-.992 2.304-2.416s-.976-2.464-2.304-2.464c-1.328 0-2.288 1.024-2.288 2.464Zm12.532-4.416v2.24c-1.647 0-2.255 1.024-2.255 2.688V24h-2.209v-8.368h2.16v1.216c.368-.832 1.2-1.424 2.305-1.424Zm3.862 8.784c-1.648 0-2.672-.832-3.12-1.552l1.296-1.152c.416.48.976.912 1.92.912.624 0 1.024-.272 1.024-.752 0-1.28-3.952-.784-3.952-3.76 0-1.552 1.328-2.48 3.04-2.48 1.584 0 2.464.832 2.864 1.488L98.118 18c-.256-.32-.72-.8-1.504-.8-.512 0-.864.256-.864.672 0 1.328 3.968.688 3.968 3.68 0 1.632-1.408 2.656-3.216 2.656Z"
+                                            fill="#000000"></path>
+                                    </svg>
+                                    <div></div>
+                                </div>
+                                <div>
+
+                                </div>
+                        </a>
+
+                        <a class="nav-link active motor-a" aria-current="page" href="#">
+                            <div class="svg">
+                                <div class="motor-svg"><svg width="112" height="40" viewBox="0 0 112 40" fill="none">
+                                        <rect width="40" height="40" rx="20" fill=""></rect>
+                                        <g fill="#000000" class="svg-hover">
+                                            <path
+                                                d="M30.782 29.81V15.796L23.296 13.3v1.577l5.988 1.997V29.81h-7.487V8.698H9.221V29.81h-.6v1.5H31.38v-1.5h-.597Zm-10.48-17.508V29.81H10.72V10.193h9.582v2.109Z">
+                                            </path>
+                                            <path
+                                                d="M15.981 12.374h2.42v1.21h-2.42v-1.21Zm-3.629 0h2.42v1.21h-2.42v-1.21Zm3.629 2.419h2.42v1.211h-2.42v-1.21Zm-3.629 0h2.42v1.211h-2.42v-1.21Zm3.629 3.631h2.42v1.21h-2.42v-1.21Zm-3.629 0h2.42v1.21h-2.42v-1.21Zm3.629 2.421h2.42v1.21h-2.42v-1.21Zm-3.629 0h2.42v1.21h-2.42v-1.21Zm3.629 3.629h2.42v1.211h-2.42v-1.21Zm-3.629 0h2.42v1.211h-2.42v-1.21Zm13.309-6.05h1.21v1.21h-1.21v-1.21Zm-2.421 0h1.21v1.21h-1.21v-1.21Zm2.421 2.421h1.21v1.21h-1.21v-1.21Zm-2.421 0h1.21v1.21h-1.21v-1.21Zm2.421 3.629h1.21v1.211h-1.21v-1.21Zm-2.421 0h1.21v1.211h-1.21v-1.21Z">
+                                            </path>
+                                        </g>
+                                        <path
+                                            d="M49.072 24V12.8h3.568c2.192 0 3.68 1.376 3.68 3.488 0 2.08-1.552 3.536-3.664 3.536h-1.328V24h-2.256Zm2.256-6.128h1.008c.992 0 1.664-.64 1.664-1.584 0-.928-.688-1.536-1.632-1.536h-1.04v3.12ZM62 15.424v2.24c-1.648 0-2.256 1.024-2.256 2.688V24h-2.208v-8.368h2.16v1.216c.368-.832 1.2-1.424 2.304-1.424Zm.681 4.416c0-2.544 1.952-4.416 4.496-4.416 2.56 0 4.512 1.888 4.512 4.416 0 2.528-1.888 4.368-4.512 4.368-2.608 0-4.496-1.84-4.496-4.368Zm2.208 0c0 1.424.976 2.416 2.288 2.416 1.328 0 2.304-.992 2.304-2.416s-.976-2.464-2.304-2.464c-1.328 0-2.288 1.024-2.288 2.464Zm8.069 7.152v-11.36h2.08v.88c.224-.288 1.056-1.088 2.48-1.088 2.4 0 4.096 1.824 4.096 4.384 0 2.592-1.568 4.4-3.968 4.4-1.44 0-2.272-.8-2.48-1.072v3.856h-2.208Zm2.144-7.2c0 1.568.928 2.464 2.144 2.464 1.28 0 2.144-1.008 2.144-2.464 0-1.488-.896-2.416-2.144-2.416-1.344 0-2.144 1.088-2.144 2.416Zm7.345.048c0-2.528 1.712-4.416 4.096-4.416 2.592 0 4.064 1.728 4.064 4.464 0 .16 0 .32-.016.48h-5.888c.048 1.12.944 1.92 2.176 1.92a2.444 2.444 0 0 0 2.032-1.024l1.456 1.104c-.32.592-1.44 1.84-3.52 1.84-2.688 0-4.4-1.856-4.4-4.368Zm2.32-.912h3.6c-.048-1.024-.784-1.696-1.792-1.696-1.04 0-1.712.736-1.808 1.696Zm11.53-3.504v2.24c-1.648 0-2.256 1.024-2.256 2.688V24h-2.208v-8.368h2.16v1.216c.368-.832 1.2-1.424 2.304-1.424Zm1.994.208v-1.76h2.176v1.76h1.568v1.792h-1.568v3.232c0 1.248.384 1.504 1.232 1.504.144 0 .224 0 .4-.016v1.888s-.336.08-.944.08c-2 0-2.88-1.12-2.88-3.392v-3.296h-.88v-1.792h.896Zm8.996 11.232h-2.112l1.168-3.072-3.216-8.16h2.368l1.872 5.456 1.888-5.456h2.304l-4.272 11.232Z"
+                                            fill="#000000" class="svg-hover"></path>
+                                    </svg>
+                                    <div></div>
+                                </div>
+                                <div></div>
+                        </a>
+                        <a href="" class="login-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke-width="1.5"
+                                height="30px" width="30px" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+        </div>
+        </nav>
+
+        <div class="search-bar-container">
+            <div class="ser-item-1">
+
+
+                <div class="location-bar">
+                    <div class="#location-inp dropdown-svg"><svg xmlns="http://www.w3.org/2000/svg" width="28px"
+                            height="37px" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                fill="#000000" />
+                        </svg></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 1024 1024"
+                            class="_11b2c2ae _8033f60b loc-svg">
+                            <path
+                                d="M512 85.33c211.75 0 384 172.27 384 384 0 200.58-214.8 392.34-312.66 469.34H440.68C342.83 861.67 128 669.9 128 469.33c0-211.73 172.27-384 384-384zm0 85.34c-164.67 0-298.67 133.97-298.67 298.66 0 160.02 196.89 340.53 298.46 416.6 74.81-56.72 298.88-241.32 298.88-416.6 0-164.69-133.98-298.66-298.67-298.66zm0 127.99c94.1 0 170.67 76.56 170.67 170.67s-76.56 170.66-170.66 170.66-170.67-76.56-170.67-170.66S417.9 298.66 512 298.66zm0 85.33c-47.06 0-85.33 38.28-85.33 85.34s38.27 85.33 85.34 85.33 85.33-38.27 85.33-85.33-38.27-85.34-85.33-85.34z">
+                            </path>
+                        </svg></div>
+                    <div>
+                        <select name="location-bar" id="location-inp">
+                            <option value="">Pakistan</option>
+                            <option value="">Azad Kashmir, Pakistan</option>
+                            <option value="">Quetta, Balochistan</option>
+                            <option value="">Karachi, Pakistan</option>
+                        </select>
+                    </div>
+                    <div style="margin-left: auto;" class="bell-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            fill="#000000" height="25px" width="25px" version="1.1" id="Capa_1"
+                            viewBox="0 0 611.999 611.999" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M570.107,500.254c-65.037-29.371-67.511-155.441-67.559-158.622v-84.578c0-81.402-49.742-151.399-120.427-181.203     C381.969,34,347.883,0,306.001,0c-41.883,0-75.968,34.002-76.121,75.849c-70.682,29.804-120.425,99.801-120.425,181.203v84.578     c-0.046,3.181-2.522,129.251-67.561,158.622c-7.409,3.347-11.481,11.412-9.768,19.36c1.711,7.949,8.74,13.626,16.871,13.626     h164.88c3.38,18.594,12.172,35.892,25.619,49.903c17.86,18.608,41.479,28.856,66.502,28.856     c25.025,0,48.644-10.248,66.502-28.856c13.449-14.012,22.241-31.311,25.619-49.903h164.88c8.131,0,15.159-5.676,16.872-13.626     C581.586,511.664,577.516,503.6,570.107,500.254z M484.434,439.859c6.837,20.728,16.518,41.544,30.246,58.866H97.32     c13.726-17.32,23.407-38.135,30.244-58.866H484.434z M306.001,34.515c18.945,0,34.963,12.73,39.975,30.082     c-12.912-2.678-26.282-4.09-39.975-4.09s-27.063,1.411-39.975,4.09C271.039,47.246,287.057,34.515,306.001,34.515z      M143.97,341.736v-84.685c0-89.343,72.686-162.029,162.031-162.029s162.031,72.686,162.031,162.029v84.826     c0.023,2.596,0.427,29.879,7.303,63.465H136.663C143.543,371.724,143.949,344.393,143.97,341.736z M306.001,577.485     c-26.341,0-49.33-18.992-56.709-44.246h113.416C355.329,558.493,332.344,577.485,306.001,577.485z" />
+                                        <path
+                                            d="M306.001,119.235c-74.25,0-134.657,60.405-134.657,134.654c0,9.531,7.727,17.258,17.258,17.258     c9.531,0,17.258-7.727,17.258-17.258c0-55.217,44.923-100.139,100.142-100.139c9.531,0,17.258-7.727,17.258-17.258     C323.259,126.96,315.532,119.235,306.001,119.235z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="ser-item-2">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                    viewBox="0 0 1024 1024">
+                    <path
+                        d="M448 725.33c-152.92 0-277.33-124.41-277.33-277.33S295.08 170.67 448 170.67 725.33 295.08 725.33 448 600.92 725.33 448 725.33zm436.44 98.78v.02L732.52 672.19c48.77-61.78 78.15-139.54 78.15-224.19 0-199.98-162.7-362.67-362.67-362.67S85.33 248.03 85.33 448c0 199.98 162.69 362.67 362.67 362.67 84.63 0 162.41-29.38 224.17-78.15l206.14 206.15h60.36v-60.33l-54.23-54.23z">
+                    </path>
+                </svg>
+                <input type="search" name="" id="" placeholder="Find Cars, Mobile Phones and more..."
+                    class="search-inp">
+                <div class="search-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.0392 15.6244C18.2714 14.084 19.0082 12.1301 19.0082 10.0041C19.0082 5.03127 14.9769 1 10.0041 1C5.03127 1 1 5.03127 1 10.0041C1 14.9769 5.03127 19.0082 10.0041 19.0082C12.1301 19.0082 14.084 18.2714 15.6244 17.0392L21.2921 22.707C21.6828 23.0977 22.3163 23.0977 22.707 22.707C23.0977 22.3163 23.0977 21.6828 22.707 21.2921L17.0392 15.6244ZM10.0041 17.0173C6.1308 17.0173 2.99087 13.8774 2.99087 10.0041C2.99087 6.1308 6.1308 2.99087 10.0041 2.99087C13.8774 2.99087 17.0173 6.1308 17.0173 10.0041C17.0173 13.8774 13.8774 17.0173 10.0041 17.0173Z"
+                            fill="#FFFFFF" />
+                    </svg>
+                </div>
+            </div>
+            <div class="ser-item-3"><span class="login-word">Login</span>
+                <div class="login-underline"></div>
+            </div>
+            <a href="#registerModal2" data-toggle="modal" class="btn btn-theme btn-success text-white">Register</a>
+            <div class="ser-items">
+                <div class="sell-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="104" height="48" viewBox="0 0 1603 768"
+                        class="_3V9PS">
+                        <path class="_2bClX _12yOz"
+                            d="M434.442 16.944h718.82c202.72 0 367.057 164.337 367.057 367.058s-164.337 367.057-367.057 367.057h-718.82c-202.721 0-367.058-164.337-367.058-367.058S231.721 16.943 434.442 16.943z"
+                            fill="#fff" />
+                        <path class="_2bClX _YBz-"
+                            d="M427.241 669.489c-80.917 0-158.59-25.926-218.705-73.004l-.016-.014C139.407 542.352 99.766 464.914 99.766 383.997c0-41.07 9.776-80.712 29.081-117.797 25.058-48.139 64.933-89.278 115.333-118.966l-52.379-67.581c-64.73 38.122-115.955 90.98-148.159 152.845C18.8 280.243 6.201 331.224 6.201 383.997c0 104.027 50.962 203.61 139.799 273.175h.016c77.312 60.535 177.193 93.887 281.22 93.887h299.699l25.138-40.783-25.138-40.783H427.237z"
+                            fill="#ffce32" />
+                        <path class="_2bClX _3uYj7"
+                            d="M1318.522 38.596c-45.72-14.369-93.752-21.658-142.762-21.658H427.249c-84.346 0-165.764 21.683-235.441 62.713l3.118 51.726 49.245 15.865c54.16-31.895 117.452-48.739 183.073-48.739h748.511c38.159 0 75.52 5.657 111.029 16.829 44.91 14.111 86.594 37.205 120.526 66.792l66.163-57.68c-43.616-38.01-97.197-67.703-154.957-85.852z"
+                            fill="#23e5db" />
+                        <path class="_2bClX BfroU"
+                            d="M1473.479 124.453l-55.855 9.91-10.307 47.76c61.844 53.929 95.92 125.617 95.92 201.88a251.85 251.85 0 01-11.214 74.363c-38.348 124.311-168.398 211.129-316.262 211.129H726.949l25.121 40.783-25.121 40.783h448.812c190.107 0 357.303-111.638 406.613-271.498a323.69 323.69 0 0014.423-95.559c0-98.044-43.805-190.216-123.317-259.551z"
+                            fill="#3a77ff" />
+                    </svg>
+                    <div class="sell-plus-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="16" height="16"
+                            viewBox="0 0 1024 1024" fill="#002f34">
+                            <path
+                                d="M414.898 123.739v291.218H123.68l-97.014 97.014 97.014 97.131h291.218v291.16l97.073 97.071 97.073-97.071v-291.16h291.16l97.131-97.131-97.131-97.014h-291.16V123.739l-97.073-97.073z" />
+                        </svg>
+                    </div>
+
+                    <div class="sell-span">
+                        <span>SELL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div style="max-width: 1280px; margin: 0px auto; ">
+
+
+        <div class="menu-div">
+            <ul class="menu-list">
+                <li style="display: flex; align-items: center;">
+                    <span class="all-categoris-span">ALL CATEGORIES</span>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                fill="#000000" />
+                        </svg></div>
+                </li>
+                <li class="list-hover">Mobile Phones</li>
+                <li class="list-hover">Cars</li>
+                <li class="list-hover">Motorcycles</li>
+                <li class="list-hover">Houses</li>
+                <li class="list-hover">Video-Audios</li>
+                <li class="list-hover">Tablets</li>
+                <li class="list-hover">Land & Plots</li>
+            </ul>
+        </div>
+
+
+        <div class="slider">
+            <!-- Static image -->
+            <img src="https://images.olx.com.pk/thumbnails/527654309-800x600.webp" class="static-img"
+                alt="Static Image">
+
+            <!-- Animated image -->
+            <img src="https://images.olx.com.pk/thumbnails/527654309-800x600.webp" class="animated-img"
+                alt="Animated Image">
+        </div>
+
+    </div>
+
+
+    <!-- ALL Categories Section  -->
+    <div style="max-width: 1280px; margin: 0px auto;">
+
+        <div class="all-cate-container">
+            <div class="all-cate-head">
+                <h4>All Categories</h4>
+                <p>See all</p>
+            </div>
+            <div class="all-categories-item">
+                <div class="all-categories-items">
+                    <img src="https://www.olx.com.pk/assets/mobiles.73f961c6ad58605c032eb7c2cf12aeaa.png"
+                        alt="Mobile pic" height="90px" width="90px" class="media-img">
+                    <p>Mobiles</p>
+                </div>
+                <div class="all-categories-items">
+                    <img src="https://www.olx.com.pk/assets/vehicles.354a5ebfb7f21e87991a277dd4b40f4b.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p>Vehicles</p>
+                </div>
+                <div class="all-categories-items" style="padding-top: 20px;">
+
+                    <img src="https://www.olx.com.pk/assets/property-for-sale.69b01e8dafc182fa3bd469d0ed4fc801.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;"> <span>Property For</span>
+                        <span>Sale</span>
+                    </p>
+                </div>
+                <div class="all-categories-items" style="padding-top: 20px;">
+                    <img src="https://www.olx.com.pk/assets/property-for-rent.49f99cc528b9b88da4f33fbe1f0b3346.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;"><span>Property
+                            For</span><span>Rent</span></p>
+                </div>
+                <div class="all-categories-items media-all-categori" style="padding-top: 50px;">
+                    <img src="https://www.olx.com.pk/assets/electronics-home-appliances.0a30101e6fd7d9ccc8cd6b85b9b44cee.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;">
+                        <span>Electronics &</span> <span>Home</span> <span>Appliances</span>
+                    </p>
+                </div>
+                <div class="all-categories-items ">
+                    <img src="https://www.olx.com.pk/assets/bikes.0a5064ae987f3bd72801b7bc2c3b6e02.png"
+                        alt="Vehicle pic" height="90px" width="90" class="media-img">
+                    <p>Bikes</p>
+                </div>
+                <div class="all-categories-items " style="padding-top: 20px;">
+                    <img src="https://www.olx.com.pk/assets/business-industrial-agriculture.2ec28979a1bde0183c777a0ce51b37c6.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;">
+                        <span>Business,</span> <span>Industrial</span>
+                    </p>
+
+                </div>
+                <div class="all-categories-items">
+                    <img src="https://www.olx.com.pk/assets/services.23d8eb1535f319324813848887961a59.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p>Services</p>
+                </div>
+                <div class="all-categories-items ">
+                    <img src="https://www.olx.com.pk/assets/jobs.dc882b8ff65e94850cc12f5abd605420.png" alt="Vehicle pic"
+                        height="90px" width="90px" class="media-img">
+                    <p>Jobs</p>
+                </div>
+                <div class="all-categories-items">
+                    <img src="https://www.olx.com.pk/assets/animals.476fa9caaf88a12dfbcd6db4c8c6f17a.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p>Animals</p>
+                </div>
+                <div class="all-categories-items " style="padding-top: 20px;">
+                    <img src="https://www.olx.com.pk/assets/furniture-home-decor.47a1998de5f4a8a9e84702dcb40bb313.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;">
+                        <span>Furniture &</span> <span> Home Decor</span>
+                    </p>
+                </div>
+                <div class="all-categories-items" style="padding-top: 20px;">
+                    <img src="https://www.olx.com.pk/assets/fashion-beauty.6ef7c1f060c92b55a6b28bfcfb16a1d2.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center;">
+                        <span>Fashion &</span> <span>Beauty</span>
+                    </p>
+                </div>
+                <div class="all-categories-items " style="padding-top: 20px;">
+                    <img src="https://www.olx.com.pk/assets/books-sports-hobbies.9406daf905b451fa283048652f414054.png"
+                        alt="Vehicle pic" height="90px" width="90px" class="media-img">
+                    <p style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <span>Books & Sports</span>
+                    </p>
+                </div>
+                <div class="all-categories-items">
+                    <img src="https://www.olx.com.pk/assets/kids.5de42a58bc91f81fa22ccc401d7ac285.png" alt="Vehicle pic"
+                        height="90px" width="90px" class="media-img">
+                    <p>Kids</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Product Cards Section -->
+
+
+    <hr>
+
+    <div id="main-div">
+        <div id="loader" class="spinner"></div>
+    </div>
+
+    <div class="card-container" id="cards" style="margin-top: 10px;">
+
+
+
+
+
+
+    </div>
+
+
+    <!-- sider free Chatgpt translator -->
+
+
+    <div style="max-width: 1200px; margin: 0px auto;">
+        <div class="poster-div">
+            <div class="poster">
+                <h1>Sider: Free ChatGPT translator</h1>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+
+                    <p class="chat-gpt">Sider -- ChatGPT , GPT -4, Draw & Web access</p>
+
+                    <div class="chat-gpt-aero">
+
+                        <svg class="ns-e9j8m-e-11 flip-on-rtl button" viewBox="0 0 100 100">
+                            <polyline fill="none" points="42,32 60,50 42,68" stroke="#222b2f" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="6"></polyline>
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- last Section  -->
+
+
+    <div style="max-width: 1300px; margin: 0px auto;">
+        <div class="last-sec">
+            <div style="margin-right: 30px;"><img
+                    src="https://www.olx.com.pk/assets/olx-mobile-app.dfa5b83f01c6e269aca19a3faff716a6.webp" alt=""
+                    height="200px">
+            </div>
+            <div class="stick"></div>
+            <div>
+
+                <div>
+                    <div>
+                        <p class="last-para">GET YOUR APP TODAY</p>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <div><img
+                                src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg"
+                                alt="App Store" class="_5c24a9de" height="40px"></div>
+                        <div><img
+                                src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg"
+                                alt="App Store" class="_5c24a9de" height="40px"></div>
+                        <div><img
+                                src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg"
+                                alt="App Store" class="_5c24a9de" height="40px"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer  -->
+
+    <div class="footer-sec">
+
+        <div>
+            <p><strong>Popular Categories</strong></p>
+            <p>Cars</p>
+            <p>Flats for rent</p>
+            <p>Mobile Phones</p>
+            <p>Jobs</p>
+        </div>
+        <div>
+            <p><strong>Trending Searches</strong></p>
+            <p>Bikes</p>
+            <p>Watches</p>
+            <p>Books</p>
+            <p>Dogs</p>
+        </div>
+        <div>
+            <p><strong>About Us</strong></p>
+            <p>About Dubizzle Group</p>
+            <p>OLX Blog</p>
+            <p>Contact Us</p>
+            <p>OLX for Businesses</p>
+        </div>
+        <div>
+            <p><strong>olx</strong></p>
+            <p>Help</p>
+            <p>Sitemap</p>
+            <p>Terms of use</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div>
+            <p><strong>FOLLOW US</strong></p>
+            <div>
+                <img src="https://www.olx.com.pk/assets/iconTwitter_noinline.6037fa7d9a7b9d6408fb1b3d70524b97.svg"
+                    alt="" height="30px">
+                <img src="https://www.olx.com.pk/assets/iconFacebook_noinline.773db88c5b9ee5aaab365e61cdb750da.svg"
+                    alt="" height="30px">
+                <img src="https://www.olx.com.pk/assets/iconYoutube_noinline.c85bd6801ec83d6a3b498059550bef26.svg"
+                    alt="" height="30px">
+                <img src="	https://www.olx.com.pk/assets/iconInstagram_noinline.d7d5811ebc44e03a674c8d0b5ff3f232.svg"
+                    alt="" height="30px">
+
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 40px;" class="footer-last-items">
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+                <div><img
+                        src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg"
+                        alt="App Store" class="_5c24a9de" height="30px"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="head">
+        <p>Design and Built by <u>Taha Bin Shafiq</u></p>
+    </div>
+    <div id="loginModal2" class="modal-style-2 dark modal ">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header p-0">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- dont forget to add action and action method  -->
+                    <form action="" method="" class="mt-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="username"
+                                    placeholder="Enter your username" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password" placeholder="Enter password"
+                                    required="required" autocomplete="on">
+                            </div>
+                        </div>
+                        <div class="row pl-1 pr-1">
+                            <div class="col text-left">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="item_checkbox"
+                                        name="item_checkbox" value="option1">
+                                    <span class="custom-control-label">&nbsp;Remember Me</span>
+                                </label>
+                            </div>
+                            <div class="col text-right hint-text pt-0">
+                                <a href="" class="text-danger">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="form-group text-center mt-2 mb-0">
+                            <button type="submit" class="btn btn-primary btn-sm">Login</button>
+
+                        </div>
+                        <p class="hint-text mt-0">or login with</p>
+                        <div class="social-login text-center">
+                            <a class=" btn-facebook  text-uppercase" href="redirect/facebook"><i
+                                    class="fab fa-facebook-f mr-2 ml-2"></i> </a>
+                            <a class=" btn-facebook  text-uppercase" href="redirect/google"><i
+                                    class="fab fa-google mr-2 ml-2"></i></a>
+                            <a class=" btn-facebook  text-uppercase" href="redirect/twitter"><i
+                                    class="fab fa-twitter mr-2 ml-2"></i></a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">Don't have an account? <a href="#registerModal2" data-dismiss="modal"
+                        data-toggle="modal"> Register</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- register modal 2 -->
+    <div id="registerModal2" class="modal-style-2 dark modal ">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header p-0">
+                    <h4 class="modal-title">Register</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" class="mt-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="name" placeholder="Enter your name"
+                                    required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input type="text" class="form-control" name="email" placeholder="Enter email address"
+                                    required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password" placeholder="Enter password"
+                                    required="required" autocomplete="on">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-eye-slash"></i></span>
+                                <input type="password" class="form-control" name="password_confirmation"
+                                    placeholder="Retype password" required="required" autocomplete="on">
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button id="signup-button" type="submit" class="btn btn-primary btn-sm">Register</button>
+
+                        </div>
+                    </form>
+
+                </div>
+                <!-- social icons -->
+                <p class="hint-text">or register with</p>
+                <div class="social-login text-center mb-2">
+                    <a class=" btn-facebook  text-uppercase" href="redirect/facebook"><i
+                            class="fab fa-facebook-f mr-2 ml-2"></i> </a>
+                    <a class=" btn-facebook  text-uppercase" href="redirect/google"><i
+                            class="fab fa-google mr-2 ml-2"></i></a>
+                    <a class=" btn-facebook  text-uppercase" href="redirect/twitter"><i
+                            class="fab fa-twitter mr-2 ml-2"></i></a>
+                </div>
+                <div class="modal-footer">Already have an account? <a href="#loginModal2" data-dismiss="modal"
+                        data-toggle="modal"> Login</a></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
+<script src="index.js"></script>
+
+</html>
