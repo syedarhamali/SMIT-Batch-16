@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook - News Feed</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: #18191a;
+        color: #e4e6eb;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background-color: #242526;
+        border-bottom: 1px solid #3e4042;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        z-index: 1000;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+      }
+
+      .facebook-logo {
+        color: #1877f2;
+        font-size: 40px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .search-bar {
+        background-color: #3a3b3c;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: #e4e6eb;
+        width: 240px;
+        font-size: 15px;
+      }
+
+      .search-bar::placeholder {
+        color: #b0b3b8;
+      }
+
+      .nav-center {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .nav-icon {
+        width: 112px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: #b0b3b8;
+        font-size: 20px;
+      }
+
+      .nav-icon:hover {
+        background-color: #3a3b3c;
+      }
+
+      .nav-icon.active {
+        color: #1877f2;
+        border-bottom: 3px solid #1877f2;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-right-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #3a3b3c;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #e4e6eb;
+        font-size: 16px;
+      }
+
+      .nav-right-icon:hover {
+        background-color: #4e4f50;
+      }
+
+      .user-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      /* Main Container */
+      .main-container {
+        display: flex;
+        margin-top: 56px;
+        min-height: calc(100vh - 56px);
+      }
+
+      /* Left Sidebar */
+      .left-sidebar {
+        width: 360px;
+        padding: 20px 8px;
+        position: fixed;
+        left: 0;
+        top: 56px;
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+      }
+
+      .user-profile {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 8px;
+      }
+
+      .user-profile:hover {
+        background-color: #3a3b3c;
+      }
+
+      .user-profile-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 12px;
+      }
+
+      .user-profile-name {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 2px;
+        color: #e4e6eb;
+        text-decoration: none;
+      }
+
+      .nav-item:hover {
+        background-color: #3a3b3c;
+      }
+
+      .nav-item i {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 12px;
+        font-size: 20px;
+      }
+
+      .nav-item-text {
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .separator {
+        height: 1px;
+        background-color: #3e4042;
+        margin: 8px 0;
+      }
+
+      .section-title {
+        color: #b0b3b8;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 16px 8px 8px 8px;
+      }
+
+      .shortcut-item {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 2px;
+      }
+
+      .shortcut-item:hover {
+        background-color: #3a3b3c;
+      }
+
+      .shortcut-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 12px;
+        font-size: 16px;
+      }
+
+      .shortcut-text {
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .footer-links {
+        padding: 8px;
+        margin-top: 20px;
+      }
+
+      .footer-link {
+        color: #b0b3b8;
+        text-decoration: none;
+        font-size: 12px;
+        margin-right: 16px;
+        line-height: 1.5;
+      }
+
+      .footer-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Center Content */
+      .center-content {
+        flex: 1;
+        margin-left: 360px;
+        padding: 20px;
+        max-width: 680px;
+      }
+
+      /* Create Post */
+      .create-post {
+        background-color: #242526;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .post-input {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .post-input-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 12px;
+      }
+
+      .post-input-field {
+        flex: 1;
+        background-color: #3a3b3c;
+        border: none;
+        border-radius: 20px;
+        padding: 12px 16px;
+        color: #e4e6eb;
+        font-size: 15px;
+      }
+
+      .post-input-field::placeholder {
+        color: #b0b3b8;
+      }
+
+      .post-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .post-action-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        transition: background-color 0.2s;
+      }
+
+      .post-action-btn:hover {
+        background-color: #3a3b3c;
+      }
+
+      .post-action-btn i {
+        margin-right: 8px;
+        font-size: 20px;
+      }
+
+      .live-video {
+        color: #f02849;
+      }
+
+      .photo-video {
+        color: #45bd62;
+      }
+
+      .feeling {
+        color: #f7b928;
+      }
+
+      /* Stories */
+      .stories {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        padding: 4px 0;
+      }
+
+      .story-card {
+        min-width: 112px;
+        height: 200px;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #1877f2, #45bd62);
+        position: relative;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .story-card.create {
+        background: #3a3b3c;
+        border: 2px solid #3e4042;
+      }
+
+      .story-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        border-radius: 0 0 10px 10px;
+      }
+
+      .story-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin: 0 auto 8px auto;
+        border: 3px solid #1877f2;
+      }
+
+      .story-text {
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        color: white;
+      }
+
+      .story-card.create .story-text {
+        color: #e4e6eb;
+      }
+
+      /* News Feed Post */
+      .feed-post {
+        background-color: #242526;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        overflow: hidden;
+      }
+
+      .post-header {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+      }
+
+      .post-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 12px;
+      }
+
+      .post-info {
+        flex: 1;
+      }
+
+      .post-author {
+        font-weight: 600;
+        font-size: 15px;
+        color: #e4e6eb;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .verified-badge {
+        color: #1877f2;
+        font-size: 12px;
+      }
+
+      .post-time {
+        color: #b0b3b8;
+        font-size: 13px;
+      }
+
+      .post-content {
+        padding: 0 16px 12px 16px;
+        color: #e4e6eb;
+        font-size: 15px;
+        line-height: 1.4;
+      }
+
+      .post-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+
+      .post-actions-bar {
+        display: flex;
+        padding: 4px 16px;
+        border-top: 1px solid #3e4042;
+      }
+
+      .post-action {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #b0b3b8;
+        font-weight: 600;
+        font-size: 15px;
+        transition: background-color 0.2s;
+      }
+
+      .post-action:hover {
+        background-color: #3a3b3c;
+      }
+
+      .post-action i {
+        margin-right: 6px;
+        font-size: 18px;
+      }
+
+      /* Right Sidebar */
+      .right-sidebar {
+        width: 300px;
+        padding: 20px 8px;
+        position: fixed;
+        right: 0;
+        top: 56px;
+        height: calc(100vh - 56px);
+        overflow-y: auto;
+      }
+
+      .sidebar-section {
+        margin-bottom: 24px;
+      }
+
+      .sidebar-title {
+        color: #b0b3b8;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .sidebar-title a {
+        color: #1877f2;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .sidebar-title a:hover {
+        text-decoration: underline;
+      }
+
+      .sponsored-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        cursor: pointer;
+      }
+
+      .sponsored-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 8px;
+        background-color: #3a3b3c;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #b0b3b8;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .sponsored-content h4 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #e4e6eb;
+      }
+
+      .sponsored-content p {
+        font-size: 12px;
+        color: #b0b3b8;
+        margin-bottom: 4px;
+      }
+
+      .sponsored-url {
+        font-size: 11px;
+        color: #b0b3b8;
+      }
+
+      .friend-request {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .friend-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #1877f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 12px;
+        font-size: 14px;
+      }
+
+      .friend-info {
+        flex: 1;
+      }
+
+      .friend-name {
+        font-weight: 600;
+        font-size: 13px;
+        color: #e4e6eb;
+        margin-bottom: 2px;
+      }
+
+      .friend-mutual {
+        font-size: 12px;
+        color: #b0b3b8;
+        margin-bottom: 8px;
+      }
+
+      .friend-buttons {
+        display: flex;
+        gap: 8px;
+      }
+
+      .friend-btn {
+        padding: 6px 16px;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .confirm-btn {
+        background-color: #1877f2;
+        color: white;
+      }
+
+      .delete-btn {
+        background-color: #3a3b3c;
+        color: #e4e6eb;
+      }
+
+      .birthday-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .birthday-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #f7b928;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 12px;
+        font-size: 16px;
+      }
+
+      .birthday-text {
+        font-size: 13px;
+        color: #e4e6eb;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+
+      .contact-item:hover {
+        background-color: #3a3b3c;
+        border-radius: 8px;
+        padding: 4px;
+      }
+
+      .contact-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #45bd62;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        margin-right: 12px;
+        font-size: 12px;
+        position: relative;
+      }
+
+      .online-indicator {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        background-color: #45bd62;
+        border: 2px solid #242526;
+        border-radius: 50%;
+      }
+
+      .contact-name {
+        font-size: 13px;
+        color: #e4e6eb;
+        font-weight: 500;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .right-sidebar {
+          display: none;
+        }
+        
+        .center-content {
+          margin-right: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .left-sidebar {
+          display: none;
+        }
+        
+        .center-content {
+          margin-left: 0;
+          padding: 10px;
+        }
+        
+        .nav-center {
+          display: none;
+        }
+        
+        .search-bar {
+          width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+      <div class="nav-left">
+        <div class="facebook-logo">f</div>
+        <input type="text" class="search-bar" placeholder="Search Facebook">
+      </div>
+      
+      <div class="nav-center">
+        <div class="nav-icon active">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="nav-icon">
+          <i class="fas fa-play"></i>
+        </div>
+        <div class="nav-icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <div class="nav-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="nav-icon">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      
+      <div class="nav-right">
+        <div class="nav-right-icon">
+          <i class="fas fa-th"></i>
+        </div>
+        <div class="nav-right-icon">
+          <i class="fab fa-facebook-messenger"></i>
+        </div>
+        <div class="nav-right-icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="user-avatar" id="userAvatar">A</div>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Left Sidebar -->
+      <div class="left-sidebar">
+        <div class="user-profile">
+          <div class="user-profile-avatar" id="sidebarUserAvatar">A</div>
+          <div class="user-profile-name" id="sidebarUserName">Syed Muhammad Arham Ali</div>
+        </div>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-robot" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Meta AI</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-user-friends" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Friends</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-clock" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Memories</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-bookmark" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Saved</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-users" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Groups</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-play" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Video</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-store" style="background-color: #1877f2;"></i>
+          <span class="nav-item-text">Marketplace</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <i class="fas fa-chevron-down" style="background-color: #3a3b3c;"></i>
+          <span class="nav-item-text">See more</span>
+        </a>
+        
+        <div class="separator"></div>
+        
+        <div class="section-title">Your shortcuts</div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-print"></i>
+          </div>
+          <span class="shortcut-text">Printer sales marketing in pakistan</span>
+        </div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-mountain"></i>
+          </div>
+          <span class="shortcut-text">The Karakoram Club</span>
+        </div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-tree"></i>
+          </div>
+          <span class="shortcut-text">DARAKHSHAN SOCIETY MALIR</span>
+        </div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-circle"></i>
+          </div>
+          <span class="shortcut-text">8 Ball Pool</span>
+        </div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-calendar"></i>
+          </div>
+          <span class="shortcut-text">Booking walay</span>
+        </div>
+        
+        <div class="shortcut-item">
+          <div class="shortcut-icon">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <span class="shortcut-text">See more</span>
+        </div>
+        
+        <div class="footer-links">
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Advertising</a>
+          <a href="#" class="footer-link">Ad Choices</a>
+          <a href="#" class="footer-link">Cookies</a>
+          <a href="#" class="footer-link">More</a>
+          <br>
+          <span class="footer-link">Meta © 2025</span>
+        </div>
+      </div>
+
+      <!-- Center Content -->
+      <div class="center-content">
+        <!-- Create Post -->
+        <div class="create-post">
+          <div class="post-input">
+            <div class="post-input-avatar" id="createPostAvatar">A</div>
+            <input type="text" class="post-input-field" placeholder="What's on your mind, Syed Muhammad?">
+          </div>
+          <div class="post-actions">
+            <div class="post-action-btn live-video">
+              <i class="fas fa-video"></i>
+              <span>Live video</span>
+            </div>
+            <div class="post-action-btn photo-video">
+              <i class="fas fa-images"></i>
+              <span>Photo/video</span>
+            </div>
+            <div class="post-action-btn feeling">
+              <i class="fas fa-smile"></i>
+              <span>Feeling/activity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stories -->
+        <div class="stories">
+          <div class="story-card create">
+            <div class="story-content">
+              <div class="story-avatar">+</div>
+              <div class="story-text">Create story</div>
+            </div>
+          </div>
+          
+          <div class="story-card">
+            <div class="story-content">
+              <div class="story-avatar">A</div>
+              <div class="story-text">Your story</div>
+            </div>
+          </div>
+          
+          <div class="story-card">
+            <div class="story-content">
+              <div class="story-avatar">M</div>
+              <div class="story-text">Muhammed Ubaid</div>
+            </div>
+          </div>
+          
+          <div class="story-card">
+            <div class="story-content">
+              <div class="story-avatar">S</div>
+              <div class="story-text">Syeda Iqra Asad</div>
+            </div>
+          </div>
+          
+          <div class="story-card">
+            <div class="story-content">
+              <div class="story-avatar">S</div>
+              <div class="story-text">Saylani Welfare...</div>
+            </div>
+          </div>
+          
+          <div class="story-card">
+            <div class="story-content">
+              <div class="story-avatar">I</div>
+              <div class="story-text">Irfan Ali</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Feed Posts -->
+        <div class="feed-post">
+          <div class="post-header">
+            <div class="post-avatar">D</div>
+            <div class="post-info">
+              <div class="post-author">
+                DawnNews
+                <i class="fas fa-check-circle verified-badge"></i>
+              </div>
+              <div class="post-time">20m</div>
+            </div>
+          </div>
+          
+          <div class="post-content">
+            گزشتہ روز پاکستان تحریک انصاف (پی ٹی آئی ) کے بانی عمران خان کی ہمشیرہ علیمہ خان نے کہا تھا کہ عمران خان کے بیٹوں نے پاکستانی ویزے کے لیے درخواست دے دی ہے اور وہ ملک آ... <a href="#" style="color: #1877f2;">See more</a>
+            <br><br>
+            <a href="#" style="color: #1877f2; font-size: 13px;">See translation</a>
+          </div>
+          
+          <img src="https://via.placeholder.com/600x400/1877f2/ffffff?text=News+Image" alt="News" class="post-image">
+          
+          <div class="post-actions-bar">
+            <div class="post-action">
+              <i class="fas fa-thumbs-up"></i>
+              <span>Like</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-comment"></i>
+              <span>Comment</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-share"></i>
+              <span>Share</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <!-- Sponsored -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            Sponsored
+          </div>
+          
+          <div class="sponsored-item">
+            <div class="sponsored-image">Fashion Ad</div>
+            <div class="sponsored-content">
+              <h4>UPTO 65% OFF</h4>
+              <p>NEW STYLES ADDED</p>
+              <div class="sponsored-url">armasclothing.com</div>
+            </div>
+          </div>
+          
+          <div class="sponsored-item">
+            <div class="sponsored-image">Video Ad</div>
+            <div class="sponsored-content">
+              <h4>syntax.pk</h4>
+              <p>Learn programming</p>
+              <div class="sponsored-url">syntax.pk</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Friend Requests -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            Friend requests
+            <a href="#">See all</a>
+          </div>
+          
+          <div class="friend-request">
+            <div class="friend-avatar">M</div>
+            <div class="friend-info">
+              <div class="friend-name">Muhammad Umair Khanzada</div>
+              <div class="friend-mutual">29 mutual friends • 5d</div>
+              <div class="friend-buttons">
+                <button class="friend-btn confirm-btn">Confirm</button>
+                <button class="friend-btn delete-btn">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Birthdays -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <i class="fas fa-gift" style="margin-right: 8px;"></i>
+            Birthdays
+          </div>
+          
+          <div class="birthday-item">
+            <div class="birthday-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <div class="birthday-text">
+              <strong>Muhammed Ubaid</strong> and <strong>Ameer Humza Ali</strong> have birthdays today.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contacts -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            Contacts
+            <div>
+              <i class="fas fa-search" style="margin-right: 8px; cursor: pointer;"></i>
+              <i class="fas fa-ellipsis-h" style="cursor: pointer;"></i>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-avatar">
+              U
+              <div class="online-indicator"></div>
+            </div>
+            <div class="contact-name">Usama Sheikh</div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-avatar">
+              H
+              <div class="online-indicator"></div>
+            </div>
+            <div class="contact-name">Hira Usman</div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-avatar">
+              R
+              <div class="online-indicator"></div>
+            </div>
+            <div class="contact-name">RaZia ZehRa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        
+        if (currentUser) {
+          // Update user avatars and names
+          const userInitial = currentUser.firstName.charAt(0);
+          const userName = `${currentUser.firstName} ${currentUser.lastName}`;
+          
+          // Update all user avatars
+          document.getElementById('userAvatar').textContent = userInitial;
+          document.getElementById('sidebarUserAvatar').textContent = userInitial;
+          document.getElementById('createPostAvatar').textContent = userInitial;
+          
+          // Update user names
+          document.getElementById('sidebarUserName').textContent = userName;
+          
+          // Update post input placeholder
+          document.querySelector('.post-input-field').placeholder = `What's on your mind, ${currentUser.firstName}?`;
+        } else {
+          // Redirect to login if no user is logged in
+          window.location.href = 'index.html';
+        }
+      });
+    </script>
+  </body>
+</html> 
