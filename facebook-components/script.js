@@ -11,6 +11,7 @@ class User {
     this.birthYear = birthYear;
     this.gender = gender;
     this.createdAt = new Date().toISOString();
+    this.friends = []
   }
 
   // Generate unique ID based on existing users length
