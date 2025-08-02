@@ -13,11 +13,17 @@ window.loca
 
 async function getProductData() {
     try {
-        let response = await fetch(`https://dummyjson.com/products/${id}`)
+        let response = await fetch(`https://dummyjso.com/products/${null}`)
         let productData = await response.json()
         data = productData
     } catch (error) {
-        console.log(error, "error")
+      console.log(error, "error")
+      var msla = 403
+      if(msla === 404){
+        throw "page not found"
+      } else{
+        throw 'Apny params define nh kea'
+      }
         let errorContainer = document.getElementById("error")
         let reloadContainer = document.getElementById("reload")
         errorContainer.removeAttribute("hidden")

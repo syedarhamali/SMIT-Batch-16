@@ -894,108 +894,16 @@
       <!-- Center Content -->
       <div class="center-content">
         <!-- Create Post -->
-        <div class="create-post">
-          <div class="post-input">
-            <div class="post-input-avatar" id="createPostAvatar">A</div>
-            <input type="text" class="post-input-field" placeholder="What's on your mind, Syed Muhammad?">
-          </div>
-          <div class="post-actions">
-            <div class="post-action-btn live-video">
-              <i class="fas fa-video"></i>
-              <span>Live video</span>
-            </div>
-            <div class="post-action-btn photo-video">
-              <i class="fas fa-images"></i>
-              <span>Photo/video</span>
-            </div>
-            <div class="post-action-btn feeling">
-              <i class="fas fa-smile"></i>
-              <span>Feeling/activity</span>
-            </div>
-          </div>
-        </div>
-
+    
+        <h1>Pick a friend to add</h1>
         <!-- Stories -->
-        <div class="stories">
-          <div class="story-card create">
-            <div class="story-content">
-              <div class="story-avatar">+</div>
-              <div class="story-text">Create story</div>
-            </div>
-          </div>
-          
-          <div class="story-card">
-            <div class="story-content">
-              <div class="story-avatar">A</div>
-              <div class="story-text">Your story</div>
-            </div>
-          </div>
-          
-          <div class="story-card">
-            <div class="story-content">
-              <div class="story-avatar">M</div>
-              <div class="story-text">Muhammed Ubaid</div>
-            </div>
-          </div>
-          
-          <div class="story-card">
-            <div class="story-content">
-              <div class="story-avatar">S</div>
-              <div class="story-text">Syeda Iqra Asad</div>
-            </div>
-          </div>
-          
-          <div class="story-card">
-            <div class="story-content">
-              <div class="story-avatar">S</div>
-              <div class="story-text">Saylani Welfare...</div>
-            </div>
-          </div>
-          
-          <div class="story-card">
-            <div class="story-content">
-              <div class="story-avatar">I</div>
-              <div class="story-text">Irfan Ali</div>
-            </div>
-          </div>
+
+        <div class="container" id="friends-container">
+
         </div>
 
         <!-- News Feed Posts -->
-        <div class="feed-post">
-          <div class="post-header">
-            <div class="post-avatar">D</div>
-            <div class="post-info">
-              <div class="post-author">
-                DawnNews
-                <i class="fas fa-check-circle verified-badge"></i>
-              </div>
-              <div class="post-time">20m</div>
-            </div>
-          </div>
-          
-          <div class="post-content">
-            گزشتہ روز پاکستان تحریک انصاف (پی ٹی آئی ) کے بانی عمران خان کی ہمشیرہ علیمہ خان نے کہا تھا کہ عمران خان کے بیٹوں نے پاکستانی ویزے کے لیے درخواست دے دی ہے اور وہ ملک آ... <a href="#" style="color: #1877f2;">See more</a>
-            <br><br>
-            <a href="#" style="color: #1877f2; font-size: 13px;">See translation</a>
-          </div>
-          
-          <img src="https://via.placeholder.com/600x400/1877f2/ffffff?text=News+Image" alt="News" class="post-image">
-          
-          <div class="post-actions-bar">
-            <div class="post-action">
-              <i class="fas fa-thumbs-up"></i>
-              <span>Like</span>
-            </div>
-            <div class="post-action">
-              <i class="fas fa-comment"></i>
-              <span>Comment</span>
-            </div>
-            <div class="post-action">
-              <i class="fas fa-share"></i>
-              <span>Share</span>
-            </div>
-          </div>
-        </div>
+    
       </div>
 
       <!-- Right Sidebar -->
@@ -1099,30 +1007,6 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        
-        if (currentUser) {
-          // Update user avatars and names
-          const userInitial = currentUser.firstName.charAt(0);
-          const userName = `${currentUser.firstName} ${currentUser.lastName}`;
-          
-          // Update all user avatars
-          document.getElementById('userAvatar').textContent = userInitial;
-          document.getElementById('sidebarUserAvatar').textContent = userInitial;
-          document.getElementById('createPostAvatar').textContent = userInitial;
-          
-          // Update user names
-          document.getElementById('sidebarUserName').textContent = userName;
-          
-          // Update post input placeholder
-          document.querySelector('.post-input-field').placeholder = `What's on your mind, ${currentUser.firstName}?`;
-        } else {
-          // Redirect to login if no user is logged in
-          window.location.href = 'index.html';
-        }
-      });
-    </script>
+    <script src="friend.js"></script>
   </body>
 </html> 
