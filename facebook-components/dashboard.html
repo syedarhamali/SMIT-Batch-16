@@ -897,7 +897,8 @@
         <div class="create-post">
           <div class="post-input">
             <div class="post-input-avatar" id="createPostAvatar">A</div>
-            <input type="text" class="post-input-field" placeholder="What's on your mind, Syed Muhammad?">
+            <input type="text" class="post-input-field" id="post" placeholder="What's on your mind, Syed Muhammad?">
+            <button id="publish-post" onclick="publishPost()">Post </button>
           </div>
           <div class="post-actions">
             <div class="post-action-btn live-video">
@@ -961,41 +962,11 @@
         </div>
 
         <!-- News Feed Posts -->
-        <div class="feed-post">
-          <div class="post-header">
-            <div class="post-avatar">D</div>
-            <div class="post-info">
-              <div class="post-author">
-                DawnNews
-                <i class="fas fa-check-circle verified-badge"></i>
-              </div>
-              <div class="post-time">20m</div>
-            </div>
-          </div>
-          
-          <div class="post-content">
-            گزشتہ روز پاکستان تحریک انصاف (پی ٹی آئی ) کے بانی عمران خان کی ہمشیرہ علیمہ خان نے کہا تھا کہ عمران خان کے بیٹوں نے پاکستانی ویزے کے لیے درخواست دے دی ہے اور وہ ملک آ... <a href="#" style="color: #1877f2;">See more</a>
-            <br><br>
-            <a href="#" style="color: #1877f2; font-size: 13px;">See translation</a>
-          </div>
-          
-          <img src="https://via.placeholder.com/600x400/1877f2/ffffff?text=News+Image" alt="News" class="post-image">
-          
-          <div class="post-actions-bar">
-            <div class="post-action">
-              <i class="fas fa-thumbs-up"></i>
-              <span>Like</span>
-            </div>
-            <div class="post-action">
-              <i class="fas fa-comment"></i>
-              <span>Comment</span>
-            </div>
-            <div class="post-action">
-              <i class="fas fa-share"></i>
-              <span>Share</span>
-            </div>
-          </div>
-        </div>
+         <div id="posts-feed-container">
+
+         </div>
+        
+        
       </div>
 
       <!-- Right Sidebar -->
@@ -1099,6 +1070,7 @@
       </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));

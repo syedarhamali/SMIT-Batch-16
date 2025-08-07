@@ -12,6 +12,7 @@ class User {
     this.gender = gender;
     this.createdAt = new Date().toISOString();
     this.friends = []
+    this.myPosts = []
   }
 
   // Generate unique ID based on existing users length
@@ -113,11 +114,11 @@ class User {
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
-    
+
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
-    
+
     return age;
   }
 }
@@ -151,7 +152,7 @@ const UserUtils = {
 // Form handling for signup page
 function handleSignupForm(event) {
   event.preventDefault();
-  
+
   const formData = new FormData(event.target);
   const firstName = formData.get('firstName') || document.querySelector('input[placeholder="First name"]').value;
   const lastName = formData.get('lastName') || document.querySelector('input[placeholder="Surname"]').value;
@@ -179,7 +180,7 @@ function handleSignupForm(event) {
   const userId = newUser.saveUser();
 
   alert(`Account created successfully! Your user ID is: ${userId}`);
-  
+
   // Redirect to login page
   window.location.href = 'index.html';
 }
@@ -187,7 +188,7 @@ function handleSignupForm(event) {
 // Form handling for login page
 function handleLoginForm(event) {
   event.preventDefault();
-  
+
   const formData = new FormData(event.target);
   const email = formData.get('email') || document.querySelector('input[type="text"]').value;
   const password = formData.get('password') || document.querySelector('input[type="password"]').value;
@@ -200,7 +201,7 @@ function handleLoginForm(event) {
 
   // Validate login
   const user = User.validateLogin(email, password);
-  console.log("user" , user)
+  console.log("user", user)
   if (user) {
     alert(`Welcome back, ${user.getFullName()}!`);
     // Store logged in user info
@@ -213,7 +214,7 @@ function handleLoginForm(event) {
 }
 
 // Initialize forms when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Handle signup form
   const signupForm = document.querySelector('form');
   if (signupForm && window.location.pathname.includes('signup.html')) {
@@ -261,6 +262,77 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+class Post {
+  constructor(content, owner) {
+    this.content = content
+    this.owner = owner
+    this.createdAt = new Date().toISOString();
+    this.likes = 0
+    this.comments = []
+  }
+
+  increaseLike() {
+    this.likes++
+  }
+}
+
+
+function publishPost() {
+  let postInput = document.getElementById("post")
+  let owner = JSON.parse(localStorage.getItem('currentUser'))
+  delete owner.password
+  let post = new Post(postInput.value, owner)
+  let freshOwner = JSON.parse(localStorage.getItem('currentUser'))
+  freshOwner.myPosts.push(post)
+  localStorage.setItem('currentUser', JSON.stringify(freshOwner))
+  renderPosts()
+  postInput.value = ''
+}
+
+function renderPosts() {
+  let user = JSON.parse(localStorage.getItem('currentUser'))
+  let feedContainer = document.getElementById('posts-feed-container')
+  feedContainer.innerHTML = ''
+  user.myPosts.reverse().map((post) => {
+    let postDate = new Date(post.createdAt)
+    feedContainer.innerHTML += `<div class="feed-post">
+          <div class="post-header">
+            <div class="post-avatar">D</div>
+            <div class="post-info">
+              <div class="post-author">
+                ${post.owner.firstName} ${post.owner.lastName} 
+                <i class="fas fa-check-circle verified-badge"></i>
+              </div>
+              <div class="post-time">${postDate}</div>
+            </div>
+          </div>
+          
+          <div class="post-content">
+           ${post.content}
+            <a href="#" style="color: #1877f2; font-size: 13px;">See translation</a>
+          </div>
+          
+          <img src="https://via.placeholder.com/600x400/1877f2/ffffff?text=News+Image" alt="News" class="post-image">
+          
+          <div class="post-actions-bar">
+            <div class="post-action">
+              <i class="fas fa-thumbs-up"></i>
+              <span>Like</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-comment"></i>
+              <span>Comment</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-share"></i>
+              <span>Share</span>
+            </div>
+          </div>
+        </div>`
+  })
+}
+renderPosts()
 // Export for use in console (for testing)
 window.User = User;
 window.UserUtils = UserUtils;

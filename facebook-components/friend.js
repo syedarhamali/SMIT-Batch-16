@@ -50,12 +50,8 @@ function showFriends() {
 console.log(loggedInUser)
 
 function addFriend(friendId, userId) {
-    if (loggedInUser.friends?.length !== 0) {
-        loggedInUser.friends = []
+   
         loggedInUser.friends.push(friendId)
-    } else {
-        loggedInUser.friends.push(friendId)
-    }
     localStorage.setItem('currentUser', JSON.stringify(loggedInUser))
 
     users[userId - 1] = loggedInUser
