@@ -1,4 +1,4 @@
-import { collection, addDoc , setDoc , doc , getDocs} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import { collection, addDoc , setDoc , doc , getDocs, getDoc , onSnapshot , query} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 export {
@@ -6,5 +6,8 @@ export {
     addDoc,
     setDoc,
     doc,
-    getDocs
+    getDocs,
+    getDoc,
+    onSnapshot,
+    query
 }

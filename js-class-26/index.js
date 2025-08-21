@@ -1,8 +1,11 @@
 import { auth, db } from "./config.js";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "./auth.js";
-import { setDoc, collection, doc, getDocs } from "./firestore-db.js";
+import { setDoc, collection, doc, getDocs, query, onSnapshot } from "./firestore-db.js";
 
-
+let currentUser = null;
+let isLoading = true;
+let allUsers = []
+let usersElement = document.getElementById("users")
 
 function registerForm() {
     let email = document.getElementById("email")
@@ -14,6 +17,7 @@ function registerForm() {
             const user = userCredential.user;
             addUserToDb(email.value, userName.value, user.uid)
             console.log(user, "register hua wa user agaya ")
+            alert("user signup successfully")
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -46,12 +50,17 @@ function getCurrentUser() {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/auth.user
             const uid = user.uid;
-            console.log("ye wo user he jo is waqt login he ", user)
+            currentUser = user
+            // console.log("ye wo user he jo is waqt login he ", user)
+            isLoading = false
+
+            // console.log(isLoading)
             // ...
         } else {
             // User is signed out
             // ...
             console.log("user logged out ho chuka he ")
+            isLoading = true
         }
     });
 }
@@ -74,20 +83,67 @@ async function addUserToDb(email, userName, userId) {
         userId,
         image: 'https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg'
     });
-    console.log("Document written with ID: ", docRef.id);
+    
 }
 
 async function getAllUsers() {
     const querySnapshot = await getDocs(collection(db, "users"));
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
+        let { userName, email } = doc.data();
+        if (usersElement) {
+            usersElement.innerHTML += `
+        <div class="user-card">
+        <h2>${userName}</h2>
+        <div >${email}</div>
+        <a href="./profile.html?uid=${doc.id}" id="viewProfile">View Profile</a>        
+    </div>
+        `
+        }
+
     });
 }
 
+async function getUser() {
+    if (currentUser) {
+        console.log("currentUser", currentUser)
+        const docRef = doc(db, "users", "SF");
+
+    }
+}
+
+
+
+function getRealTimeData() {
+    const q = query(collection(db, "users"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const users = [];
+        usersElement.innerHTML = ''
+        querySnapshot.forEach((doc) => {
+            let { userName, email } = doc.data();
+            if (usersElement) {
+                usersElement.innerHTML += `
+        <div class="user-card">
+        <h2>${userName}</h2>
+        <div >${email}</div>
+        <a href="./profile.html?uid=${doc.id}" id="viewProfile">View Profile</a>        
+    </div>
+        `}
+        }
+        );
+        console.log("users ka array he ye0", users)
+    });
+}
+
+getRealTimeData()
+
 getCurrentUser()
 getAllUsers()
+getUser()
 
-document.getElementById('registerForm').addEventListener('click', registerForm)
-document.getElementById('loginForm').addEventListener('click', loginUser)
-document.getElementById('logout-user').addEventListener('click', logUserOut)
+document.getElementById('registerForm')?.addEventListener('click', registerForm)
+document.getElementById('loginForm')?.addEventListener('click', loginUser)
+document.getElementById('logout-user')?.addEventListener('click', logUserOut)
+
+export { currentUser, isLoading, getCurrentUser }
