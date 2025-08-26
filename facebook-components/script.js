@@ -263,31 +263,94 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-class Post {
-  constructor(content, owner) {
-    this.content = content
-    this.owner = owner
-    this.createdAt = new Date().toISOString();
-    this.likes = 0
-    this.comments = []
-  }
+// class Post {
+//   constructor(content, owner) {
+//     this.content = content
+//     this.owner = owner
+//     this.createdAt = new Date().toISOString();
+//     this.likes = 0
+//     this.comments = []
+//   }
 
-  increaseLike() {
-    this.likes++
+//   increaseLike() {
+//     this.likes++
+//   }
+// }
+
+
+// function publishPost() {
+//   let postInput = document.getElementById("post")
+//   let owner = JSON.parse(localStorage.getItem('currentUser'))
+//   delete owner.password
+//   let post = new Post(postInput.value, owner)
+//   let freshOwner = JSON.parse(localStorage.getItem('currentUser'))
+//   freshOwner.myPosts.push(post)
+//   localStorage.setItem('currentUser', JSON.stringify(freshOwner))
+//   renderPosts()
+//   postInput.value = ''
+// }
+
+class Post{
+  constructor(firstName , lastName , id , text , image){
+    this.ownerName = firstName + lastName
+    this.ownerId = id
+    this.text =  text
+    this.postImage = image
+    this.createdAt = new Date()
   }
 }
 
+let posts = []
 
-function publishPost() {
-  let postInput = document.getElementById("post")
-  let owner = JSON.parse(localStorage.getItem('currentUser'))
-  delete owner.password
-  let post = new Post(postInput.value, owner)
-  let freshOwner = JSON.parse(localStorage.getItem('currentUser'))
-  freshOwner.myPosts.push(post)
-  localStorage.setItem('currentUser', JSON.stringify(freshOwner))
-  renderPosts()
-  postInput.value = ''
+
+function publishPost(){
+    let inputElement = document.getElementById("post")
+    let {firstName , lastName , email , id} = JSON.parse(localStorage.getItem("currentUser")) 
+
+    let post = new Post(firstName , lastName , id , inputElement.value , "https:")
+
+    posts.push(post)
+
+
+    let postElement = document.getElementById("post-elements")
+    postElement.innerHTML = ''
+    posts.map((post) =>{
+      postElement.innerHTML += `<div class="feed-post">
+          <div class="post-header">
+            <div class="post-avatar">D</div>
+            <div class="post-info">
+              <div class="post-author">
+                ${post.ownerName}
+                <i class="fas fa-check-circle verified-badge"></i>
+              </div>
+              <div class="post-time">${post.createdAt}</div>
+            </div>
+          </div>
+          
+          <div class="post-content">
+          ${post.text}
+            <a href="#" style="color: #1877f2; font-size: 13px;">See translation</a>
+          </div>
+          
+          <img src="https://via.placeholder.com/600x400/1877f2/ffffff?text=News+Image" alt="News" class="post-image">
+          
+          <div class="post-actions-bar">
+            <div class="post-action">
+              <i class="fas fa-thumbs-up"></i>
+              <span>Like</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-comment"></i>
+              <span>Comment</span>
+            </div>
+            <div class="post-action">
+              <i class="fas fa-share"></i>
+              <span>Share</span>
+            </div>
+          </div>
+        </div>`
+    })
+    console.log(post , "ye wo post he jo class se bani he")
 }
 
 function renderPosts() {

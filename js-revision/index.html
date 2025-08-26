@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision</title>
+</head>
+<style>
+    #container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #card {
+        border: 1px solid black;
+        max-width: max-content;
+        padding: 10px;
+        height: 300px;
+        width: 300px;
+    }
+
+    @media print {
+        #title{
+            display: none;
+        }
+        
+    }
+</style>
+
+<body>
+    <h1 id="title">JavaScript Revision</h1>
+
+
+    <header>
+        <button id="auth" onclick="loginUser()">Login/signup</button>
+        <button id="user" style="display: none;">Arham Ali</button>
+        <button id="sell" disabled>Sell</button>
+    </header>
+
+
+    <div id="container">
+        <!-- <div id="card">
+            <h2>Title</h2>
+            <p>description</p>
+            <span>5$</span>
+            <a href="#">View Details</a>
+        </div>
+         <div id="card">
+            <h2>Title</h2>
+            <p>description</p>
+            <span>5$</span>
+            <a href="#">View Details</a>
+        </div>
+         <div id="card">
+            <h2>Title</h2>
+            <p>description</p>
+            <span>5$</span>
+            <a href="#">View Details</a>
+        </div> -->
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
