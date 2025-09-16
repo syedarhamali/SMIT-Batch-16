@@ -20,7 +20,7 @@ async function getData() {
 
 
   products.map((product) => {
-    let { title, description, category, images, price, availabilityStatus, stock } = product;
+    let { title, description, category, images, price, availabilityStatus , } = product;
     let { width, height, depth } = product.dimensions;
     console.log(width)
     cardElement.innerHTML += ` <div class="card">
