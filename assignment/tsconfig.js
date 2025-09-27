@@ -1,0 +1,1 @@
+// iske andar ap ny outDir me js-file likhna he or rootDir me ts-file ka path dena he.
