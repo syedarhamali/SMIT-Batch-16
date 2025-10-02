@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function TodoList() {
     // const [counter , setCounter] = useState({firstName: 'Arham' , lastName: 'Ali'})
@@ -16,18 +16,22 @@ function TodoList() {
     }])
 
 
-    const getProducts = async() =>{
+    const getProducts = async () => {
         const data = await fetch("https://dummyjson.com/products")
         const response = await data.json()
         setData(response.products)
     }
 
-    getProducts()
+    useEffect(() => {
+        getProducts()
+    }, [])
+    
+    // getProducts()
 
     return (
         <div>
             {data.map((element) => {
-                const {id , title , description , price} = element
+                const { id, title, description, price } = element
                 return (
                     <div id={id}>
                         <h1>{title}</h1>
