@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 function TodoList() {
+    const [onlineStatus, setOnlineStatus] = useState(navigator.onLine)
     // const [counter , setCounter] = useState({firstName: 'Arham' , lastName: 'Ali'})
     // const lastName = "Ali"
     // var counter = 10
@@ -25,12 +26,12 @@ function TodoList() {
     useEffect(() => {
         getProducts()
     }, [])
-    
+
     // getProducts()
 
     return (
         <div>
-            {data.map((element) => {
+            {/* {data.map((element) => {
                 const { id, title, description, price } = element
                 return (
                     <div id={id}>
@@ -39,7 +40,13 @@ function TodoList() {
                         <p>{price}</p>
                     </div>
                 )
-            })}
+            })} */}
+
+            {onlineStatus ? <h1 id="online">Online</h1> : <h1 id="offline">Offline</h1>} // conditional rendering
+
+
+
+
 
             {/* <h1>Todo List</h1>
 
