@@ -319,12 +319,12 @@ function Signup() {
                         </div>
                     </div>
                     <div className="my-8 self-center text-sm">
-                        <span className="text-foreground-light">Have an account?</span>{" "}
+                        <span className="text-foreground-light">Already Have an account?</span>{" "}
                         <a
                             className="underline text-foreground hover:text-foreground-light transition"
                             data-sentry-element="Link"
                             data-sentry-source-file="sign-up.tsx"
-                            href="/dashboard/sign-in"
+                            href="/signin"
                         >
                             Sign In Now
                         </a>

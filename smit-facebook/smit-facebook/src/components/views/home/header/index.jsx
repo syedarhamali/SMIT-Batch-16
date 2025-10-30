@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router"
+
 function Header() {
+    const navigate = useNavigate()
     return (
         <nav className="relative z-40 border-default border-b backdrop-blur-sm transition-opacity">
             <div className="relative flex justify-between h-16 mx-auto lg:container lg:px-16 xl:px-20">
@@ -182,7 +185,7 @@ function Header() {
                         </nav>
                     </div>
                     <div>
-                        <button className="text-black">Sign in</button>
+                        <button onClick={() => navigate("/signin")} className="text-black">Sign in</button>
                     </div>
                 </div>
                 <div className="inset-y-0 flex mr-2 items-center px-4 lg:hidden">

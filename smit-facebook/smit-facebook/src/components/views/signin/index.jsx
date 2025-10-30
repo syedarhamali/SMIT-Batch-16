@@ -30,11 +30,11 @@ function SignIn() {
 
     return (
         <div className="flex flex-1 h-full">
-            <main className="flex flex-col items-center flex-1 flex-shrink-0 px-5 pt-16 pb-8 border-r shadow-lg bg-studio border-default">
+            <main className="flex flex-col items-center flex-1 shrink-0 px-5 pt-16 pb-8 border-r shadow-lg bg-studio border-default">
                 <div className="flex-1 flex flex-col justify-center w-[330px] sm:w-[384px]">
                     <div className="mb-10">
-                        <h1 className="mt-8 mb-2 lg:text-3xl">Get started</h1>
-                        <h2 className="text-sm text-foreground-light">Create a new account</h2>
+                        <h1 className="mt-8 mb-2 lg:text-3xl">Log in Now</h1>
+                        <h2 className="text-sm text-foreground-light">Sign in to a account</h2>
                     </div>
                     <div className="flex flex-col gap-5">
                         <div
@@ -80,7 +80,7 @@ function SignIn() {
                                                         placeholder="you@example.com"
                                                         aria-describedby=":r9:-form-item-description"
                                                         aria-invalid="false"
-                                                        className="flex w-full rounded-md border border-control read-only:border-button bg-foreground/[.026] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted read-only:text-foreground-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background-control focus-visible:ring-offset-2 focus-visible:ring-offset-foreground-muted disabled:cursor-not-allowed disabled:text-foreground-muted aria-[] aria-[invalid=true]:bg-destructive-200 aria-[invalid=true]:border-destructive-400 aria-[invalid=true]:focus:border-destructive aria-[invalid=true]:focus-visible:border-destructive text-sm leading-4 px-3 py-2 h-[34px]"
+                                                        className="flex w-full rounded-md border border-control read-only:border-button bg-foreground/[.026] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted read-only:text-foreground-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background-control focus-visible:ring-offset-2 focus-visible:ring-offset-foreground-muted disabled:cursor-not-allowed disabled:text-foreground-muted aria-[] aria-invalid:bg-destructive-200 aria-invalid:border-destructive-400 aria-invalid:focus:border-destructive aria-invalid:focus-visible:border-destructive text-sm leading-4 px-3 py-2 h-[34px]"
                                                         defaultValue=""
                                                         onChange={(event) => setUserData({ ...userData, email: event.target.value })}
                                                     />
@@ -126,7 +126,7 @@ function SignIn() {
                                                             autoComplete="new-password"
                                                             placeholder="••••••••"
                                                             name="password"
-                                                            className="flex w-full rounded-md border border-control read-only:border-button bg-foreground/[.026] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted read-only:text-foreground-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background-control focus-visible:ring-offset-2 focus-visible:ring-offset-foreground-muted disabled:cursor-not-allowed disabled:text-foreground-muted aria-[] aria-[invalid=true]:bg-destructive-200 aria-[invalid=true]:border-destructive-400 aria-[invalid=true]:focus:border-destructive aria-[invalid=true]:focus-visible:border-destructive text-sm leading-4 px-3 py-2 h-[34px]"
+                                                            className="flex w-full rounded-md border border-control read-only:border-button bg-foreground/[.026] file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted read-only:text-foreground-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background-control focus-visible:ring-offset-2 focus-visible:ring-offset-foreground-muted disabled:cursor-not-allowed disabled:text-foreground-muted aria-[] aria-invalid:bg-destructive-200 aria-invalid:border-destructive-400 aria-invalid:focus:border-destructive aria-invalid:focus-visible:border-destructive text-sm leading-4 px-3 py-2 h-[34px]"
                                                             defaultValue=""
                                                             value={userData.password}
                                                             onChange={(event) => setUserData({ ...userData, password: event.target.value })}
@@ -139,7 +139,7 @@ function SignIn() {
                                                             aria-label="Hide password"
                                                             className="justify-center cursor-pointer inline-flex items-center space-x-2 text-center font-regular ease-out duration-200 rounded-md outline-none transition-all outline-0 focus-visible:outline-4 focus-visible:outline-offset-1 border text-foreground bg-alternative dark:bg-muted hover:bg-selection border-strong hover:border-stronger focus-visible:outline-brand-600 data-[state=open]:bg-selection data-[state=open]:outline-brand-600 data-[state=open]:border-button-hover text-xs py-1 h-[26px] absolute right-1 top-1 px-1.5"
                                                         >
-                                                            <div className="[&_svg]:h-[14px] [&_svg]:w-[14px] text-foreground-lighter">
+                                                            <div className="[&_svg]:h-3.5 [&_svg]:w-3.5 text-foreground-lighter">
                                                                 <svg
                                                                     xmlns="http://www.w3.org/2000/svg"
                                                                     width={24}
@@ -166,7 +166,7 @@ function SignIn() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="max-h-[0px] transition-all duration-400 overflow-y-hidden">
+                                    <div className="max-h-0 transition-all duration-400 overflow-y-hidden">
                                         <div
                                             className="text-sm"
                                             data-sentry-component="PasswordConditionsHelper"
@@ -312,7 +312,7 @@ function SignIn() {
                                         className="relative space-x-2 text-center font-regular ease-out duration-200 rounded-md outline-none transition-all outline-0 focus-visible:outline-4 focus-visible:outline-offset-1 border bg-brand-400 dark:bg-brand-500 hover:bg-brand/80 dark:hover:bg-brand/50 text-foreground border-brand-500/75 dark:border-brand/30 hover:border-brand-600 dark:hover:border-brand focus-visible:outline-brand-600 data-[state=open]:bg-brand-400/80 dark:data-[state=open]:bg-brand-500/80 data-[state=open]:outline-brand-600 w-full flex items-center justify-center text-base px-4 py-2 h-[42px] opacity-50 "
                                     >
                                         {" "}
-                                        <span className="truncate">Sign Up</span>{" "}
+                                        <span className="truncate">Sign In</span>{" "}
                                     </button>
                                 </form>
                             </div>
@@ -324,9 +324,9 @@ function SignIn() {
                             className="underline text-foreground hover:text-foreground-light transition"
                             data-sentry-element="Link"
                             data-sentry-source-file="sign-up.tsx"
-                            href="/dashboard/sign-in"
+                            href="/signup"
                         >
-                            Sign In Now
+                            Sign Up Now
                         </a>
                     </div>
                 </div>
