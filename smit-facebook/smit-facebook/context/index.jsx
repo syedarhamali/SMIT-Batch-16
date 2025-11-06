@@ -16,9 +16,6 @@ function AuthProvider({ children }) {
                 setFirebaseUser(user)
                 setLoading(false)
                 // ...
-            } else {
-                // User is signed out
-                // ...
             }
         });
 
