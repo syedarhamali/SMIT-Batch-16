@@ -17,8 +17,32 @@ const updateProductData =  async (id, data)=>{
     const response = await axios.patch(`https://smit-backend-crud.vercel.app/api/items/${id}`,data)
     console.log(response)
 }
+
+const getUsersData = async () => {
+    const response = await axios.get('http://localhost:3000/users')
+    console.log(response , "response arha he custom backend se")
+    // const { data: itemData } = response
+    // const { data } = itemData
+    // return data
+}
+
+const createNewUser = async () =>{
+    const response = await axios.post("http://localhost:3000/users/create" , {name: 'Affan' , email: 'affan@gmail.com'})
+    console.log(response , "response aya he post ki request krny k baad")
+}
+
+
+
+
+const deleteUserData = async () => {
+    const response = await axios.delete(`http://localhost:3000/users/delete/3`)
+}
+
 export {
     getProductData,
     deleteProductData,
-    updateProductData
+    updateProductData,
+    getUsersData,
+    createNewUser,
+    deleteUserData
 }

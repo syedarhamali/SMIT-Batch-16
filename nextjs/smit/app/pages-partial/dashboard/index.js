@@ -1,5 +1,5 @@
 'use client'
-import { deleteProductData, getProductData, updateProductData } from "@/app/services";
+import { createNewUser, deleteProductData, deleteUserData, getProductData, getUsersData, updateProductData } from "@/app/services";
 import { useEffect, useState } from "react";
 
 export default function DashboardPartial() {
@@ -18,6 +18,11 @@ export default function DashboardPartial() {
 
     useEffect(() => {
         getData()
+        createNewUser()
+        deleteUserData()
+        setTimeout(() => {
+            getUsersData()
+        }, 1000);
     }, [])
 
 

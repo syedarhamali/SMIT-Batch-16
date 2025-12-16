@@ -57,12 +57,12 @@ window.checkRoom = async (event) => {
     rooms.forEach((room) => {
         roomId = room.id
     })
-    if(!roomId){
+    if (!roomId) {
         const docRef = await addDoc(collection(db, "chatrooms"), { bothUsers, createdAt: new Date().toISOString(), createdBy: userId });
         roomId = docRef.id
     }
 
-    if(roomId){
+    if (roomId) {
         window.location.href = `./messages.html?roomId=${roomId}`
     }
 }
